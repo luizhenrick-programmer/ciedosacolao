@@ -8,7 +8,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  MessageCircle,
 } from "lucide-react";
 import "./App.css";
 import logoVereador from "./assets/logo.svg";
