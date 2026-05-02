@@ -13,6 +13,7 @@ import "./App.css";
 import logoVereador from "./assets/logo.svg";
 import logoSlogan from "./assets/slogan.png";
 import backgroundImage from "./assets/background-hero.png";
+import logoVereadorBio from "./assets/vereador-cie.webp";
 
 const AchievementCard = ({
   icon: Icon,
@@ -51,6 +52,7 @@ const AchievementCard = ({
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-slate-900">
+      <div className="bg-[#1B3679] w-full h-8 md:h-10 shadow-inner"></div>
       {/* --- NAVBAR --- */}
       <nav className="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -90,11 +92,12 @@ export default function App() {
       {/* --- HERO SECTION --- */}
       <header className="min-h-[80vh] relative bg-[#1e3a8a] text-white overflow-hidden">
         {/* Ajuste 1: Gradiente mais denso e escuro na esquerda */}
-        <div className="w-1/2 absolute inset-0 bg-gradient-to-r from-[#1e3a8a]/90 via-blue-900/60 to-transparent z-10" />
+        <div className="w-1/2 absolute inset-0 bg-gradient-to-r from-[#2E71B5]/90 via-[#2E71B5]/60 to-transparent z-10" />
 
         <div
           className="absolute inset-0 bg-size-[auto_700px] bg-center bg-no-repeat z-0"
           style={{ backgroundImage: `url(${backgroundImage})` }}
+          aria-modal="true"
         />
 
         <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center relative z-20">
@@ -108,9 +111,9 @@ export default function App() {
 
             {/* Ajuste 4: Removi a opacidade do parágrafo para legibilidade máxima */}
             <p className="max-w-md text-lg text-justify mb-8 drop-shadow-md">
-              <strong>Transparência e Ação:</strong>{" "}
-              Acompanhe o trabalho legislativo e ajude a fiscalizar nossa
-              cidade. Este é o seu canal direto com o Vereador Ciê do Sacolão.
+              <strong>Transparência e Ação:</strong> Acompanhe o trabalho
+              legislativo e ajude a fiscalizar nossa cidade. Este é o seu canal
+              direto com o Vereador Ciê do Sacolão.
             </p>
 
             <div className="max-w-md flex flex-wrap gap-3">
@@ -140,6 +143,56 @@ export default function App() {
         </div>
       </header>
 
+      {/* --- SEÇÃO BIOGRAFIA --- */}
+      <section className="flex flex-col md:flex-row items-center gap-12 pt-20 max-w-7xl mx-auto px-4">
+        {/* Container da Imagem */}
+        <div className="w-full md:w-1/3">
+          <img
+            src={logoVereadorBio}
+            alt="Vereador Ciê em seu gabinete"
+            className="w-full h-auto rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-[1.02] object-cover"
+          />
+        </div>
+
+        {/* Conteúdo Textual */}
+        <div className="w-full md:w-2/3 flex flex-col justify-center">
+          <h2 className="text-4xl font-bold text-slate-900 mb-2">
+            Quem Sou Eu
+          </h2>
+
+          <h3 className="text-xl font-semibold text-blue-700 mb-6 uppercase tracking-wide">
+            Formosa-GO / Vereador
+          </h3>
+
+          <div className="space-y-4 text-gray-700 leading-relaxed text-lg text-justify">
+            <p>
+              O <strong>Vereador Ciê</strong> é uma figura atuante no legislativo municipal
+              de Formosa. Eleito com <strong>1.420 votos</strong> na última eleição,
+              consolidou-se como o vereador mais <strong>votado da cidade e de toda a
+              região.</strong>
+            </p>
+
+            <p>
+              Sua trajetória é marcada pelo compromisso com projetos como o{" "}
+              <strong>Sementes do Bem</strong>, focado no bem-estar da mente,
+              corpo e comunidade, além de sua atuação constante na modernização
+              das leis municipais para beneficiar os cidadãos.
+            </p>
+          </div>
+
+          {/* Link de Chamada */}
+          <a
+            href="#perfil-completo"
+            className="mt-8 flex items-center gap-2 text-blue-900 font-bold hover:text-blue-700 transition-colors group"
+          >
+            Leia seu perfil completo
+            <span className="transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </a>
+        </div>
+      </section>
+
       {/* --- MINHAS CONQUISTAS --- */}
       <section className="py-20 max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-black text-blue-900 mb-10">
@@ -149,32 +202,32 @@ export default function App() {
           <AchievementCard
             icon={HardHat}
             title="Fiscalização de Obras"
-            text="Fiscalização de Obras continue o building e consolata."
+            text="Acompanhamento rigoroso e presencial da execução de obras públicas no município. O objetivo é garantir a qualidade dos materiais e serviços, o cumprimento dos prazos estabelecidos e a transparência na aplicação do dinheiro do contribuinte."
           />
           <AchievementCard
             icon={BookOpen}
             title="Apoio à Educação"
-            text="Apoio à Educação, mands apoio educação e educação."
+            text="Dedicação contínua à melhoria do ensino municipal através de emendas, projetos e fiscalização. Foco na valorização dos profissionais da educação, na modernização da infraestrutura das escolas e na garantia de um aprendizado de qualidade para crianças e jovens."
           />
           <AchievementCard
             icon={FileText}
             title="Projetos de Lei Aprovados"
-            text="Projetos de Lei Aprovados, sssvereete genefiticos agienas."
+            text="Registro das propostas legislativas apresentadas e convertidas em lei. São iniciativas focadas em gerar benefícios reais e duradouros para a população de Formosa, organizando a cidade e garantindo direitos aos cidadãos."
           />
           <AchievementCard
             icon={Users}
             title="Atendimento Comunitário"
-            text="Atendimento Comunitário, sune comunidado ciina da map."
+            text="Um gabinete de portas abertas para ouvir você. Espaço dedicado ao diálogo direto com o cidadão, recebendo demandas, sugestões e reclamações dos bairros para transformá-las em ações concretas na Câmara Municipal."
           />
           <AchievementCard
             icon={Gavel}
-            title="Projetos de Lei Aprovados"
-            text="Projetos de Lei Aprovados, asvereete projeto de lei aprovados."
+            title="Agricultura, Cultura e Esporte"
+            text="Atuação focada no fortalecimento da agricultura familiar e na garantia de estradas vicinais de qualidade para o escoamento da produção. Simultaneamente, promovemos a qualidade de vida através do incentivo ativo ao esporte local e à valorização das manifestações culturais de Formosa, cuidando da economia e da nossa gente."
           />
           <AchievementCard
             icon={PlusCircle}
             title="Saúde Pública"
-            text="Saúde Pública prentumão atendimento en saúde biospodotica."
+            text="Atuação firme para fortalecer o sistema municipal de saúde. O trabalho foca na fiscalização do atendimento nos postos e hospitais, na cobrança por agilidade em exames e consultas, e na destinação de recursos para prevenção e cuidados básicos."
           />
         </div>
       </section>
@@ -189,19 +242,26 @@ export default function App() {
             <div className="space-y-5 text-gray-600 font-medium">
               <div className="flex items-start gap-4">
                 <MapPin className="text-blue-900 mt-1" />
-                <p>Office de Camda.xaxva, 38, Formosa-GO / Rosea</p>
+                <address className="not-italic text-gray-700">
+                  <p className="font-bold text-blue-900">
+                    Câmara Municipal de Formosa
+                  </p>
+                  <p>2º Andar, Gabinete Ciê do Sacolão</p>
+                  <p>Praça Rui Barbosa, nº 70, Centro</p>
+                  <p>Formosa - GO | CEP: 73801-220</p>
+                </address>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="text-blue-900" />
-                <p>(21) 3953-8390</p>
+                <p>(61) 99809-6873</p>
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="text-blue-900" />
-                <p>inte@porgoiás.com.br</p>
+                <p>ciedosacolao@camaraformosa.go.gov.br</p>
               </div>
             </div>
           </div>
-          <form className="space-y-4 bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <form className="space-y-4 bg-gray-200 p-8 rounded-2xl border border-gray-100">
             <input
               type="text"
               placeholder="Nome"
