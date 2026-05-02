@@ -31,7 +31,7 @@
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
     "vite": "^8.0.10"
-  }
-  "predeploy": "npm run build"
+  },
+  "predeploy": "npm run build",
   "deploy": "gh-pages -d dist"
 }
