@@ -103,7 +103,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center relative z-20">
           {" "}
           {/* Ajuste 2: z-index maior aqui */}
-          <div className="md:w-1/2">
+          <div className="order-last md:order-first md:w-1/2">
             {/* Ajuste 3: Drop-shadow no título */}
             <h1 className="text-5xl md:text-6xl font-black mb-6 leading-[1.1] drop-shadow-lg">
               COMO PODEMOS AJUDAR VOCÊ HOJE?
@@ -131,12 +131,12 @@ export default function App() {
               </button>
             </div>
           </div>
-          <div className="md:w-1/2 mt-10 md:mt-0 relative flex justify-end">
+          <div className="order-first top-0 right-4 md:top-0 md:right-0 md:order-last md:w-1/2 mt-10 md:mt-0 relative flex justify-end">
             <div className="right-16 bg-white p-5 rounded-xl shadow-2xl z-20 text-blue-900 border border-gray-100">
               <img
                 src={logoSlogan}
                 alt="Logotipo oficial"
-                className="h-64 w-auto object-contain drop-shadow-2xl transition-transform hover:scale-105"
+                className="h-20 w-auto md:h-64 object-contain drop-shadow-2xl transition-transform hover:scale-105"
               />
             </div>
           </div>
