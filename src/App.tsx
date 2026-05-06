@@ -63,6 +63,8 @@ export default function App() {
               className="h-20 w-auto object-contain drop-shadow-2xl transition-transform hover:scale-105"
             />
           </div>
+          <div>
+          </div>
           <div className="hidden md:flex gap-6 text-blue-900 font-semibold text-sm">
             <a href="#" className="hover:text-blue-600">
               Home
