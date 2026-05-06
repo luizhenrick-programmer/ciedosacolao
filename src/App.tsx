@@ -8,12 +8,16 @@ import {
   MapPin,
   Phone,
   Mail,
+  Section,
 } from "lucide-react";
 import "./App.css";
 import logoVereador from "./assets/logo.svg";
 import logoSlogan from "./assets/slogan.png";
 import backgroundImage from "./assets/background-hero.png";
 import logoVereadorBio from "./assets/vereador-cie.webp";
+import noticia1 from "./assets/noticia1.png";
+import noticia2 from "./assets/noticia2.jfif";
+import noticia3 from "./assets/noticia3.jfif";
 
 const AchievementCard = ({
   icon: Icon,
@@ -63,8 +67,7 @@ export default function App() {
               className="h-20 w-auto object-contain drop-shadow-2xl transition-transform hover:scale-105"
             />
           </div>
-          <div>
-          </div>
+          <div></div>
           <div className="hidden md:flex gap-6 text-blue-900 font-semibold text-sm">
             <a href="#" className="hover:text-blue-600">
               Home
@@ -85,9 +88,9 @@ export default function App() {
               Contato
             </a>
           </div>
-          <button className="bg-[#00a884] text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-600 transition shadow-md cursor-pointer">
+          <a href={"https://chat.gazetadoitiquira.com.br/denuncie"} target="_blank" className="bg-[#00a884] text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-600 transition shadow-md cursor-pointer">
             Falar com Gabinete
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -168,10 +171,11 @@ export default function App() {
 
           <div className="space-y-4 text-gray-700 leading-relaxed text-lg text-justify">
             <p>
-              O <strong>Vereador Ciê</strong> é uma figura atuante no legislativo municipal
-              de Formosa. Eleito com <strong>1.420 votos</strong> na última eleição,
-              consolidou-se como o vereador mais <strong>votado da cidade e de toda a
-              região.</strong>
+              O <strong>Vereador Ciê</strong> é uma figura atuante no
+              legislativo municipal de Formosa. Eleito com{" "}
+              <strong>1.420 votos</strong> na última eleição, consolidou-se como
+              o vereador mais{" "}
+              <strong>votado da cidade e de toda a região.</strong>
             </p>
 
             <p>
@@ -234,8 +238,80 @@ export default function App() {
         </div>
       </section>
 
+      {/* --- ÚLTIMAS NOTÍCIAS --- */}
+      <section className="max-w-7xl mx-auto px-4 pb-8">
+        <h2 className="text-3xl font-black text-blue-900 mb-10">
+          Últimas Notícias
+        </h2>
+        {/* Grid de Notícias */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Card de Notícia - Exemplo 1 */}
+          <div className="flex flex-col group cursor-pointer">
+            <div className="overflow-hidden rounded-3xl mb-4">
+              <img
+                src={noticia1}
+                alt="Ciê aprova emenda"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 leading-tight mb-2">
+              Ciê aprova emenda parlamentar
+            </h3>
+            <p className="text-gray-500 text-sm mb-3">28/08/2023</p>
+            <a
+              href="#"
+              className="text-blue-900 font-bold flex items-center hover:underline"
+            >
+              Leia a notícia completa <span className="ml-2">&gt;</span>
+            </a>
+          </div>
+
+          {/* Card de Notícia - Exemplo 2 */}
+          <div className="flex flex-col group cursor-pointer">
+            <div className="overflow-hidden rounded-3xl mb-4">
+              <img
+                src={noticia2}
+                alt="Visita ao Bairro"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 leading-tight mb-2">
+              Visita ao Bairro Formosinha
+            </h3>
+            <p className="text-gray-500 text-sm mb-3">28/08/2023</p>
+            <a
+              href="#"
+              className="text-blue-900 font-bold flex items-center hover:underline"
+            >
+              Leia a notícia completa <span className="ml-2">&gt;</span>
+            </a>
+          </div>
+
+          {/* Card de Notícia - Exemplo 3 */}
+          <div className="flex flex-col group cursor-pointer">
+            <div className="overflow-hidden rounded-3xl mb-4">
+              <img
+                src={noticia3}
+                alt="Ouvidoria Móvel"
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <h3 className="text-2xl font-bold text-slate-900 leading-tight mb-2">
+              Ouvidoria Móvel em Ação.
+            </h3>
+            <p className="text-gray-500 text-sm mb-3">23/03/2023</p>
+            <a
+              href="#"
+              className="text-blue-900 font-bold flex items-center hover:underline"
+            >
+              Leia a notícia completa <span className="ml-2">&gt;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* --- CONTATO --- */}
-      <footer className="bg-white border-t pt-16">
+      <footer className="bg-white pt-16">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 pb-16">
           <div>
             <h2 className="text-3xl font-black text-blue-900 mb-8">
@@ -280,6 +356,7 @@ export default function App() {
           </form>
         </div>
 
+        {/* RODAPÉ */}
         <div className="bg-blue-950 text-white py-10">
           <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
