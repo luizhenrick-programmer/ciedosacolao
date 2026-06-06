@@ -8,7 +8,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Section,
 } from "lucide-react";
 import "./App.css";
 import logoVereador from "./assets/logo.svg";
@@ -56,7 +55,6 @@ const AchievementCard = ({
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-slate-900">
-      <div className="bg-[#1B3679] w-full h-8 md:h-10 shadow-inner"></div>
       {/* --- NAVBAR --- */}
       <nav className="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -88,7 +86,7 @@ export default function App() {
               Contato
             </a>
           </div>
-          <a href={"https://chat.gazetadoitiquira.com.br/denuncie"} target="_blank" className="bg-[#00a884] text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-600 transition shadow-md cursor-pointer">
+          <a href="https://chat.gazetadoitiquira.com.br/denuncie" target="_blank" className="bg-[#00a884] text-white px-6 py-2 rounded-full font-bold hover:bg-emerald-600 transition shadow-md cursor-pointer">
             Falar com Gabinete
           </a>
         </div>
@@ -238,80 +236,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* --- ÚLTIMAS NOTÍCIAS --- */}
-      <section className="max-w-7xl mx-auto px-4 pb-8">
-        <h2 className="text-3xl font-black text-blue-900 mb-10">
-          Últimas Notícias
-        </h2>
-        {/* Grid de Notícias */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Card de Notícia - Exemplo 1 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="overflow-hidden rounded-3xl mb-4">
-              <img
-                src={noticia1}
-                alt="Ciê aprova emenda"
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 leading-tight mb-2">
-              Ciê aprova emenda parlamentar
-            </h3>
-            <p className="text-gray-500 text-sm mb-3">28/08/2023</p>
-            <a
-              href="#"
-              className="text-blue-900 font-bold flex items-center hover:underline"
-            >
-              Leia a notícia completa <span className="ml-2">&gt;</span>
-            </a>
-          </div>
-
-          {/* Card de Notícia - Exemplo 2 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="overflow-hidden rounded-3xl mb-4">
-              <img
-                src={noticia2}
-                alt="Visita ao Bairro"
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 leading-tight mb-2">
-              Visita ao Bairro Formosinha
-            </h3>
-            <p className="text-gray-500 text-sm mb-3">28/08/2023</p>
-            <a
-              href="#"
-              className="text-blue-900 font-bold flex items-center hover:underline"
-            >
-              Leia a notícia completa <span className="ml-2">&gt;</span>
-            </a>
-          </div>
-
-          {/* Card de Notícia - Exemplo 3 */}
-          <div className="flex flex-col group cursor-pointer">
-            <div className="overflow-hidden rounded-3xl mb-4">
-              <img
-                src={noticia3}
-                alt="Ouvidoria Móvel"
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 leading-tight mb-2">
-              Ouvidoria Móvel em Ação.
-            </h3>
-            <p className="text-gray-500 text-sm mb-3">23/03/2023</p>
-            <a
-              href="#"
-              className="text-blue-900 font-bold flex items-center hover:underline"
-            >
-              Leia a notícia completa <span className="ml-2">&gt;</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* --- CONTATO --- */}
-      <footer className="bg-white pt-16">
+      <footer className="bg-white pt-16 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 pb-16">
           <div>
             <h2 className="text-3xl font-black text-blue-900 mb-8">
@@ -339,21 +265,35 @@ export default function App() {
               </div>
             </div>
           </div>
-          <form className="space-y-4 bg-gray-200 p-8 rounded-2xl border border-gray-100">
-            <input
-              type="text"
-              placeholder="Nome"
-              className="w-full p-4 bg-white border rounded-xl focus:ring-2 focus:ring-blue-900 outline-none transition"
-            />
-            <input
-              type="email"
-              placeholder="E-mail"
-              className="w-full p-4 bg-white border rounded-xl focus:ring-2 focus:ring-blue-900 outline-none transition"
-            />
-            <button className="w-full bg-blue-900 text-white py-4 rounded-xl font-bold hover:bg-blue-800 transition shadow-lg">
-              Enviar Mensagem
-            </button>
-          </form>
+          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#173478] focus:ring-1 focus:ring-[#173478]"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#173478] focus:ring-1 focus:ring-[#173478]"
+                />
+              </div>
+              <div>
+                <textarea
+                  placeholder="Mensagem"
+                  rows={4}
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#173478] focus:ring-1 focus:ring-[#173478]"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-[#173478] text-white font-bold py-4 rounded-lg hover:bg-[#173478]/90 transition-colors cursor-pointer"
+              >
+                SUBMIT
+              </button>
+            </form>
         </div>
 
         {/* RODAPÉ */}
